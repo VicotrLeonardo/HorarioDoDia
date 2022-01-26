@@ -1,22 +1,23 @@
 const agora = new Date();
 const horario = agora.getHours();
+//const horario = 11;
 console.log(horario);
 //declaração de variaveis
-var corDeFundo = document.body;
+var body = document.body;
 var saudacao = document.querySelector(".texto-horas");
 var imagem = document.querySelector(".img-responsive");
 
 //
-if (horario >= 0 && horario <= 12) {
-  corDeFundo.style.background = "rgb(243, 146, 19)";
-  saudacao.innerHTML = "Bom Dia!!";
+if (horario >= 0 && horario < 12) {
+  body.style.background = "#e2cd9f";
+  saudacao.innerHTML = `Bom Dia!! Agora são ${horario} Hrs.`;
   imagem.src = "./imagens/bomdia.jpg";
-} else if (horario <= 18) {
-  corDeFundo.style.background = "rgb(187, 145, 6)";
-  saudacao.innerHTML = "Boa Tarde!!";
+} else if (horario >= 12 && horario <= 18) {
+  body.style.background = "#b9846f";
+  saudacao.innerHTML = `Boa Tarde!! Agora são ${horario} Hrs.`;
   imagem.src = "./imagens/boatarde.jpg";
 } else {
-  corDeFundo.style.background = "black";
-  saudacao.innerHTML = "Boa Noite!!";
+  body.style.background = "black";
+  saudacao.innerHTML = `Boa Noite!! Agora são ${horario} Hrs.`;
   imagem.src = "./imagens/boanoite.jpg";
 }
